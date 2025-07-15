@@ -16,7 +16,7 @@ To validate the performance of our custom flight controller and firmware, we con
 Below is an image of our test setup, showing the STM32 development board and connected sensor modules.
 
 ![Test Setup](images/test_setup.png)
-*Note: Ensure the `images/test_setup.png` file is uploaded to your repository's `images` folder. The image should depict the STM32 board and sensor connections clearly.*
+
 
 ### Testing Methods
 
