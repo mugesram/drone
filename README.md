@@ -64,37 +64,14 @@ Betaflight Configurator is the cross-platform tool used to configure and flash y
 
 Follow these steps to flash your custom Betaflight target firmware onto the flight controller:
 
-1. **Prepare the Firmware**:
-   - This repository includes a Unified Target configuration for your custom flight controller, located at `unified-targets/configs/default/<MANUFACTURER_ID>_<BOARD_NAME>.config`.
-   - If your board uses an unsupported MCU, a legacy target definition is also provided in `src/main/target/<BOARD_NAME>`.
+1. **Flash the Firmware**:
+   - Using Flash Firmware(local) load our custom Firmware.
 
-2. **Connect the Flight Controller**:
-   - Connect your flight controller to your computer using a USB data cable.
-   - In Betaflight Configurator, select the correct COM port from the top-right dropdown. If no COM port appears, ensure drivers are installed (e.g., ImpulseRC Driver Fixer for Windows) or check your USB cable.
 
-3. **Enter DFU Mode (if needed)**:
-   - If the flight controller does not automatically enter DFU mode, manually activate it:
-     - Hold the BOOT button (or short the BOOT pads) on your flight controller while connecting the USB cable.
-     - In Betaflight Configurator, the device should appear as “DFU” in the COM port dropdown.
-
-4. **Flash the Firmware**:
-   - Navigate to the **Firmware Flasher** tab in Betaflight Configurator.
-   - **Load Firmware**:
-     - For Betaflight 4.4 and above, use the online build system:
-       - Load our custom firmware.
-
-   - **Flash the Firmware**:
-     - Click **Flash Firmware**. Ensure “Full Chip Erase” is disabled for F4 targets unless necessary.
-     - Wait for the flashing process to complete. The flight controller will reboot automatically.
-
-5. **Apply Custom Defaults**:
+2. **Apply Custom Defaults**:
    - After flashing, reconnect to the flight controller.
    - When prompted, select **Yes** to apply custom defaults specific to your target.
 
-6. **Verify and Configure**:
-   - Go to the **Setup** tab to confirm the flight controller is responding (the 3D model should move when you tilt the board).
-   - Calibrate the accelerometer by placing the board on a level surface and clicking **Calibrate Accelerometer**.
-   - Configure UARTs, receiver, VTX, and other settings in the **Ports**, **Receiver**, and **VTX** tabs as per your hardware setup.
 
 
 ## Acknowledgments
