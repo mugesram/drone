@@ -1,14 +1,37 @@
-# Custom Betaflight Flight Controller Target
+# Xfly - The Custom Flight Controller Board
 
 ## Introduction
 
-Welcome to the Custom Betaflight Flight Controller Target project! I have designed and built my own flight controller hardware from the ground up, tailored specifically for Betaflight to deliver exceptional performance for FPV drones. This repository provides a custom Betaflight target for my unique hardware, enabling seamless integration with the open-source Betaflight firmware. Designed for enthusiasts and professionals, this flight controller supports STM32-based processors (e.g., F4, F7, or H7) and includes optimized configurations for peripherals like ESCs, receivers, GPS, and OSD, making it ideal for multi-rotor and fixed-wing crafts.
+Welcome to my  XFly Flight Controller Board project! I have designed and built my own flight controller hardware from the ground up, tailored specifically for Betaflight to deliver exceptional performance for FPV drones. This repository provides a custom Betaflight target for my unique hardware, enabling seamless integration with the open-source Betaflight firmware. Designed for enthusiasts and professionals, this flight controller supports STM32-based processors (e.g., F4, F7, or H7) and includes optimized configurations for peripherals like ESCs, receivers, GPS, and OSD, making it ideal for multi-rotor and fixed-wing crafts.
 
 Below is a diagram illustrating the hardware connections for my custom flight controller. This serves as a reference for setting up the board.
 
 
 ![Custom Flight Controller Diagram](images/fc_design.png)
 
+## Testing Results and Sensor Test Guidelines
+
+To validate the performance of our custom flight controller and firmware, we conducted initial tests using an STM32 development board paired with sensor modules in a controlled indoor environment. These tests aimed to reduce costs while evaluating the hardware and firmware setup. **Important**: The sensor modules used (gyroscope, accelerometer, magnetometer, and barometer) are for initial testing only and are not suitable for final drone builds. Some modules may be duplicate variants, which could compromise reliability. For safety and optimal performance in production drones, we strongly recommend using original sensors purchased from authorized dealers. The use of cost-effective modules during testing allowed us to assess baseline performance in a closed environment, with the expectation that original sensors will yield significantly better results.
+
+Below is an image of our test setup, showing the STM32 development board and connected sensor modules.
+
+![Test Setup](images/test_setup.png)
+*Note: Ensure the `images/test_setup.png` file is uploaded to your repository's `images` folder. The image should depict the STM32 board and sensor connections clearly.*
+
+### Testing Methods
+
+Accurate real-time measurements of yaw, pitch, and roll angles are critical for precise drone control. To achieve this, we tested the gyroscope, accelerometer, magnetometer, and barometer individually to ensure their reliability with our custom flight controller.
+
+- **Gyroscope and Accelerometer Testing**:
+  We tested the gyroscope and accelerometer by rotating the flight controller to known roll and pitch angles, measured using high-precision digital angle meters. The maximum error observed was 0.2 degrees, confirming high accuracy in detecting angular changes.
+
+- **Magnetometer Testing**:
+  The magnetometer measures yaw as a deviation from magnetic north. We validated its performance by comparing readings against a professional digital compass. The maximum deviation error was 2 degrees, indicating reliable yaw measurements suitable for flight control.
+
+- **Barometer Testing**:
+  Barometer readings were evaluated using a meter scale to verify altitude measurements. Despite some noise due to indoor ventilation, the barometer provided near-accurate readings, sufficient for initial testing in a controlled environment.
+
+These results demonstrate that our custom flight controller, even with cost-effective test modules, achieves excellent sensor performance. Using original sensors from authorized dealers will further enhance reliability and accuracy in real-world flight conditions.
 
 ## Prerequisites
 
